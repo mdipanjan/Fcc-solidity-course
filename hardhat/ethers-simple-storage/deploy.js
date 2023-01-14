@@ -16,7 +16,9 @@ async function main() {
   );
   const contractFactory = new ethers.ContractFactory(abi, binary, wallet);
   const contract = await contractFactory.deploy();
-  console.log(contract);
+  //Transaction recipent wait for 1 block confirmation
+  const deploymentRecipent = await contract.deployTransaction.wait(1);
+  console.log(deploymentRecipent);
 }
 main()
   .then(() => process.exit(0))

@@ -18,7 +18,7 @@ async function main() {
   const contract = await contractFactory.deploy();
   //Transaction recipent wait for 1 block confirmation
   const deploymentRecipent = await contract.deployTransaction.wait(1);
-  console.log(deploymentRecipent);
+  //   console.log(deploymentRecipent);
 }
 main()
   .then(() => process.exit(0))
